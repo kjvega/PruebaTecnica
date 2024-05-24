@@ -1,0 +1,59 @@
+<div class="container-main">
+  <div class="container-tap-group">
+    <mat-tab-group>
+      <mat-tab label="Compra">
+        <mat-tab-group>
+          <mat-tab label="Proyectos">
+            <div class="container-map">
+              <google-map
+                width="600px"
+                height="570px"
+                class="map-google"
+                [center]="center"
+                [zoom]="zoom"
+                (mapClick)="addMarker($event)">
+                <map-marker *ngFor="let markerPosition of markerPositions"
+                            [position]="markerPosition"
+                            [options]="markerOptions">
+                </map-marker>
+              </google-map>
+
+
+           <div class="container-table">
+             <button class="button-add" mat-raised-button color="primary" (click)="addModal()">
+               <i class="fa-solid fa-plus"></i> Agregar
+             </button>
+             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+               <ng-container matColumnDef="lat">
+                 <th mat-header-cell *matHeaderCellDef> Latitud </th>
+                 <td mat-cell *matCellDef="let element"> {{element.lat}} </td>
+               </ng-container>
+
+               <ng-container matColumnDef="lng">
+                 <th mat-header-cell *matHeaderCellDef> Longitud </th>
+                 <td mat-cell *matCellDef="let element"> {{element.lng}} </td>
+               </ng-container>
+               <ng-container matColumnDef="description">
+                 <th mat-header-cell *matHeaderCellDef> Descripcción </th>
+                 <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+               </ng-container>
+               <ng-container matColumnDef="action">
+                 <th mat-header-cell *matHeaderCellDef> Acción </th>
+                 <td mat-cell *matCellDef="let element"><i style="cursor: pointer" class="fa-solid fa-pen-to-square" (click)="editModal(element)"></i></td>
+               </ng-container>
+               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+             </table>
+
+           </div>
+
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-tab>
+      <mat-tab label="Venta">
+        xd venta
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

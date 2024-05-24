@@ -1,0 +1,38 @@
+.container-lading-page{
+  width: 100%;
+  height: 100%;
+
+  .header-lading-page{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(52, 176, 255, 0.73);
+    padding: 10px;
+    .container-logo{
+
+    }
+    .container-buttons{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+
+      button{
+        padding: 12px 24px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background: none;
+        border: none;
+      }
+
+      button:hover{
+        background: white;
+        color: black;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.container-main {
+  width: 100%;
+  height: 100%; // Make sure it takes the full viewport height
+  padding: 12px;
+  box-sizing: border-box;
+
+  .container-tap-group {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .container-map {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+
+      .container-table{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+
+        .button-add{
+          margin-bottom: 10px;
+        }
+        table {
+          width: 100%;
+          overflow: auto;
+        }
+      }
+
+
+
+
+    }
+  }
+}

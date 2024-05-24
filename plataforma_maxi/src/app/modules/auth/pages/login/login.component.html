@@ -1,0 +1,48 @@
+<div class="container-auth">
+  <div class="container-image">
+    <img src="assets/images/trabajo.jpg" alt="logo-maxi">
+  </div>
+  <div class="container-login">
+    <div class="container-login-image">
+<!--      imagen aca xd-->
+    </div>
+    <div class="container-title">
+     <span>
+        ¡Hola bienvenido!
+     </span>
+    </div>
+    <div class="container-description">
+      <span>Inicia secion para administrar tu cuenta</span>
+    </div>
+    <div class="container-form-auth">
+      <form [formGroup]="newForm">
+        <div class="container-field">
+          <div class="container-text-form">
+            <label>Usuario</label>
+          </div>
+          <div class="container-input">
+            <input type="text" placeholder="ingresa tu usuario" formControlName="username">
+          </div>
+        </div>
+        <div class="container-field">
+          <div class="container-text-form">
+            <label>Contraseña</label>
+          </div>
+          <div class="container-input">
+            <input  type="password" placeholder="ingresa tu contraseña" formControlName="password">
+          </div>
+        </div>
+          <div class="container-routes">
+            <div class="container-routes-register">
+              <p>¿No tienes cuenta?</p>
+              <span routerLink="register">Registrate</span>
+            </div>
+          </div>
+          <div class="container-button">
+            <button  type="button" (click)="verifyAuth()">Iniciar secion</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+

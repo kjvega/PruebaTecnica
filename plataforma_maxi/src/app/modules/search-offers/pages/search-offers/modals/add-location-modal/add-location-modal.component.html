@@ -1,0 +1,37 @@
+<div class="container-form-auth">
+  <form [formGroup]="newForm">
+    <div class="container-field">
+      <div class="container-text-form">
+        <label>Latitud</label>
+      </div>
+      <div class="container-input">
+        <input type="number" placeholder="Ingresa la Latitud" formControlName="latitude">
+      </div>
+    </div>
+    <div class="container-field">
+      <div class="container-text-form">
+        <label>Longitud</label>
+      </div>
+      <div class="container-input">
+        <input  type="number" placeholder="Ingresa la Longitud" formControlName="length">
+      </div>
+    </div>
+
+    <div class="container-field">
+      <div class="container-text-form">
+        <label>Descripción</label>
+      </div>
+      <div class="container-input">
+        <input  type="text" placeholder="Ingresa la Descripción" formControlName="description">
+      </div>
+    </div>
+
+    <div class="container-button">
+      <button  type="button" (click)="save()">Guardar</button>
+    </div>
+
+    <div class="container-button">
+      <button  type="button" (click)="this.closeDialog(false)">Cancelar</button>
+    </div>
+  </form>
+</div>
