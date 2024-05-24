@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataTable} from "../../interfaces/search-offers";
+import {DataTable, DataTableVentas} from "../../interfaces/search-offers";
 import {AddLocationModalComponent} from "./modals/add-location-modal/add-location-modal.component";
 import {MatDialog} from "@angular/material/dialog";
 import {SearchOffersService} from "../../../../service/search-offers.service";
@@ -26,6 +26,10 @@ export class SearchOffersComponent implements OnInit {
 
   displayedColumns: string[] = ['lat', 'lng','description', 'action'];
 
+  dataSourceVentas:DataTableVentas[] =[];
+
+  displayedColumnsVentas: string[] = ['mes', 'inmuebles','totalVentas'];
+
   constructor(
     public dialog: MatDialog,
     private service:SearchOffersService
@@ -35,6 +39,7 @@ export class SearchOffersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllDataTable();
+    this.getAllDataTableVentas();
   }
   getAllDataTable():void{
    this.service.getDataTable().subscribe({
@@ -43,6 +48,16 @@ export class SearchOffersComponent implements OnInit {
        this.mapDataTableMap();
       }
     })
+
+  }
+
+  getAllDataTableVentas():void{
+    this.service.getDataTableVentas().subscribe({
+      next:(response)=>{
+        this.dataSourceVentas = response;
+      }
+    })
+
 
   }
 

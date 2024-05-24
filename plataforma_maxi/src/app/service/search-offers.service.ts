@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {URL} from "../../environments/environment";
-import {DataTable, DataTableSave} from "../modules/search-offers/interfaces/search-offers";
+import {DataTable, DataTableSave, DataTableVentas} from "../modules/search-offers/interfaces/search-offers";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -15,6 +15,10 @@ export class SearchOffersService {
 
   getDataTable(){
     return this.http.get<DataTable[]>(this.apiUrl+'dataTable');
+  }
+
+  getDataTableVentas(){
+    return this.http.get<DataTableVentas[]>(this.apiUrl+'dataTableVentas');
   }
 
   saveDataTable(data: DataTableSave): Observable<DataTable> {
